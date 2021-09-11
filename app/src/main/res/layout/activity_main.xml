@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+   <!-- <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">-->
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="@string/welcome_text"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/top_guide"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top_guide"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+
+ <TextView
+     android:id="@+id/enable_network"
+     android:layout_width="match_parent"
+     android:layout_height="wrap_content"
+     android:gravity="center"
+     android:text="@string/enable_network"
+     app:layout_constraintTop_toBottomOf="@+id/top_guide"
+     app:layout_constraintBottom_toTopOf="@+id/middle_two"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     android:visibility="gone"/>
+
+
+
+    <TextView
+        android:id="@+id/progress_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/progress_text"
+        app:layout_constraintTop_toBottomOf="@+id/top_guide"
+        app:layout_constraintBottom_toTopOf="@+id/middle_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintTop_toBottomOf="@+id/top_guide"
+        app:layout_constraintBottom_toTopOf="@+id/middle_two"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_guide"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/middle_two"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.6"/>
+
+
+
+    <TextView
+        android:id="@+id/launch_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="launchFragment"
+        android:text="Click Here to download all files"
+        android:textStyle="bold"
+        android:textScaleX="1.5"
+        app:layout_constraintTop_toBottomOf="@+id/middle_two"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:enabled="false"/>
+
+ <!--   </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragment_container"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+         android:layout_height="match_parent"
+         android:tag="myFragment" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
